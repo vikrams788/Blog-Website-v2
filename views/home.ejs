@@ -1,0 +1,17 @@
+<%- include("partial/header") -%>
+
+<h1>Home</h1>
+<p><%= homeText %></p>
+
+<% newPosts.forEach(function(post) { %>
+  <h1><%= post.title %></h1>
+  <% if (post.content) { %>
+    <p><%= post.content.substring(0, 100) + " ..." %> <a href="/posts/<%= post._id %>">Read More</a></p>
+  <% } else { %>
+    <p>No content available</p>
+  <% } %>
+<% }) %>
+
+<a href="/compose"><button class="btn btn-primary">Compose</button></a>
+
+<%- include("partial/footer") -%>

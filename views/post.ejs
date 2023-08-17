@@ -1,0 +1,9 @@
+<%- include("partial/header") -%>
+
+<h1><%= title %></h1>
+<% if (imagePath) { %>
+  <img src="<%= path.join('/', imagePath) %>" alt="<%= title %>"/>
+<% } %>      
+<p><%= content %></p>
+
+<%- include("partial/footer") -%>
